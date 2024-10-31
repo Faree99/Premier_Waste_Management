@@ -1,0 +1,35 @@
+/* customSlick.css */
+
+/* Base styles */
+.slick-slide {
+    transition: transform 0.5s ease;
+  }
+  
+  /* Dots */
+  .slick-dots {
+    bottom: 10px;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: white; /* Change to your desired dot color */
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: orange; /* Change to your desired active dot color */
+  }
+  
+  /* Navigation arrows */
+  .slick-prev, .slick-next {
+    font-size: 30px; /* Adjust the size */
+    color: white; /* Change to your desired color */
+  }
+  
+  .slick-prev {
+    left: 10px; /* Adjust position */
+  }
+  
+  .slick-next {
+    right: 10px; /* Adjust position */
+  }
+  
