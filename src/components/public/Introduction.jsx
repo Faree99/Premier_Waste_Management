@@ -50,7 +50,7 @@ const Introduction = () => {
     
           {/* Content */}
               <div className="relative flex flex-col items-center justify-center h-full px-4 text-center text-white md:px-8">
-               <h1 className="mb-4 text-4xl font-bold">Welcome to Public Waste <br /> Management Services</h1>
+               <h1 className="mb-4 text-4xl font-bold leading-tight md:text-5xl">Welcome to Public Waste Management Services</h1>
                <p className="text-lg">Helping you manage your waste efficiently and sustainably</p>
                <p className="mb-8 text-lg">Join us today and experience the difference</p>
                <Link to="/aboutus" className="px-6 py-3 text-white transition bg-green-700 rounded-full hover:bg-green-500">
