@@ -5,7 +5,7 @@ const Introduction = () => (
   <div className="relative flex flex-col items-center justify-center h-[85vh] overflow-hidden text-white bg-gray-900">
       {/* Background Video */}
       <video 
-        src="images/video6.mov" 
+        src="images/video6.mp4" 
         autoPlay 
         loop 
         muted 

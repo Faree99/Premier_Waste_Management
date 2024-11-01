@@ -19,7 +19,7 @@ const HeroSection = () => {
 
   const slides = [
     {
-      video: 'images/video5.mov',
+      video: 'images/video5.mp4',
     },
     {
       video: 'images/video2.mp4',
