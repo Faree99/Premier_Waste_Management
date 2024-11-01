@@ -1,10 +1,11 @@
+import { div } from 'framer-motion/client';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 
 const Introduction = () => (
   
-  <div className="relative flex flex-col items-center justify-center h-[85vh] overflow-hidden text-white bg-gray-900">
+  <div className="relative z-10 flex flex-col items-center justify-center h-[85vh] overflow-hidden text-white bg-gray-900">
       {/* Background Video */}
       <video 
         src="images/video6.mp4" 
