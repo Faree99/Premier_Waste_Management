@@ -49,13 +49,13 @@ const Hero = () => {
           autoPlay 
           loop 
           muted 
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover w-full h-full"
         />
       ) : (
         <img 
           src={slide.image} 
           alt={slide.title} 
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover w-full h-full"
         />
       )}
 
