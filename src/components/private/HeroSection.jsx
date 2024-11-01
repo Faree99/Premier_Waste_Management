@@ -19,10 +19,10 @@ const HeroSection = () => {
 
   const slides = [
     {
-      video: 'images/video5.mp4',
+      image: 'images/solid.jpg',
     },
     {
-      video: 'images/video2.mp4',
+      image: 'images/image2.jpg',
     },
     {
       video: 'images/video4.mp4',
@@ -36,13 +36,21 @@ const HeroSection = () => {
 {slides.map((slide, index) => (
   <div key={index} className="relative flex items-center justify-center h-screen">
     {/* Background Video */}
-    <video 
-      src={slide.video} 
-      autoPlay 
-      loop 
-      muted 
-      className="absolute inset-0 w-full h-full  object-cover"
-    />
+    {slide.video ? (
+        <video 
+          src={slide.video} 
+          autoPlay 
+          loop 
+          muted 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      ) : (
+        <img 
+          src={slide.image} 
+          alt={slide.title} 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      )}
 
     {/* Overlay */}
     <div className="absolute inset-0 bg-black opacity-50"></div> 
@@ -55,9 +63,9 @@ const HeroSection = () => {
         <p className="mb-8 text-lg md:text-xl">
           Connect with your nearest waste management providers effortlessly.
         </p>
-        <a href="/services" className="px-6 py-3 font-medium text-white transition duration-300 bg-green-500 rounded-full hover:bg-green-600">
+        <Link to="/services" className="px-6 py-3 font-medium text-white transition duration-300 bg-green-500 rounded-full hover:bg-green-600">
           Find Your Service
-        </a>
+        </Link>
       </div>
   </div>
 ))}

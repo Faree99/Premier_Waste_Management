@@ -93,7 +93,7 @@ const Header = () => {
                             )}
                         </div>
                         <Link to="/news" className="block px-4 py-2 text-gray-800 hover:bg-green-200">News</Link>
-                        <Link to="/contact" className="block px-4 py-2 text-gray-800 hover:bg-green-200">Contact Us</Link>
+                        <Link to="/contactus" className="block px-4 py-2 text-gray-800 hover:bg-green-200">Contact Us</Link>
                         <button
                             onClick={toggleModal}
                             className="block w-full px-4 py-2 mt-2 text-center text-green-500 border border-green-500 rounded hover:bg-green-800 hover:text-white"

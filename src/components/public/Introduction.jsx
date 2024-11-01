@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Introduction = () => (
   
@@ -20,9 +22,9 @@ const Introduction = () => (
       <h1 className="mb-4 text-4xl font-bold">Welcome to Public Waste Management Services</h1>
        <p className="text-lg">Helping you manage your waste efficiently and sustainably</p>
        <p className="mb-8 text-lg">Join us today and experience the difference</p>
-       <a href="/aboutus" className="px-6 py-3 text-white transition bg-green-700 rounded-full hover:bg-green-500">
+       <Link to="/aboutus" className="px-6 py-3 text-white transition bg-green-700 rounded-full hover:bg-green-500">
          Learn More
-       </a>
+       </Link>
       </div>
     </div>
 

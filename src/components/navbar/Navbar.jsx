@@ -67,12 +67,11 @@ const Navbar = () => {
                             <Link to="/" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Home</Link>
                             <Link to="/aboutus" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">About Us</Link>      
                             <div className="relative">
-                                <Link to="/services" 
+                                <button 
                                     onClick={toggleMobileDropdown} 
-                                    className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-200"
-                                >
+                                    className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-200">
                                     Services
-                                </Link>
+                                </button>
                                 {isMobileDropdownOpen && (
                                     <div className="absolute right-0 z-10 mt-2 bg-white rounded shadow-lg">
                                         <Link to="/public-sector" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Public Sector</Link>
@@ -81,7 +80,7 @@ const Navbar = () => {
                                 )}
                             </div> 
                             <Link to="/news" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">News</Link> 
-                            <Link to="/contact" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Contact Us</Link>
+                            <Link to="/contactus" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Contact Us</Link>
                             
                         </div>
                     )}

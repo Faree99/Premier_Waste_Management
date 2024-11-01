@@ -25,12 +25,13 @@ const Hero = () => {
       description: "Join us in keeping the environment clean by easily managing your waste pickups and recycling efforts.",
     },
     {
-      image: 'images/dump.jpg',
+      image: 'images/recyler.jpg',
       title: "Reduce, Reuse, Recycle!",
       description: "Every small effort counts in making our planet a better place.",
     },
     {
-      video: '/images/video4.mp4',
+      // video: '/images/video4.mp4',
+      image: 'images/dump.jpg',
       title: "Sustainable Solutions for a Greener Tomorrow",
       description: "Discover innovative ways to manage your waste effectively.",
     },
@@ -42,7 +43,6 @@ const Hero = () => {
   {slides.map((slide, index) => (
     <div key={index} className="relative flex items-center justify-center h-screen">
       {/* Background Image */}
-      {/* <img src={slide.image} alt={slide.title} className="absolute inset-0 w-full h-full object-cover" /> */}
       {slide.video ? (
         <video 
           src={slide.video} 
