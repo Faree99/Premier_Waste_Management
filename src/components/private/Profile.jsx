@@ -38,7 +38,8 @@ const Profile = () => {
     };
 
     return (
-    <div className="flex flex-col md:flex-row bg-gradient-to-b from-green-200 to-orange-200">
+
+<div className="flex flex-col md:flex-row  bg-gradient-to-b from-green-200 to-orange-200">
   {/* Toggle Button for Mobile View */}
   <button
     onClick={toggleSidebar}
@@ -54,7 +55,6 @@ const Profile = () => {
     ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:relative md:shadow-none`}>
     <div className="flex items-center justify-between">
       <div className="p-4 text-2xl font-bold text-white">Dashboard</div>
-      {/* Close Button Only Visible in Mobile View */}
       <button onClick={closeSidebar} className="text-white focus:outline-none md:hidden">
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -72,7 +72,7 @@ const Profile = () => {
   </aside>
 
   {/* Main Content Area */}
-  <main className={`flex-1 p-6 transition-all duration-300 ${isSidebarOpen ? 'md:ml-64' : 'md:ml-0'}`}>
+  <main className={`flex-1 p-6 transition-all duration-300 ${isSidebarOpen ? 'md:ml-64' : 'md:ml-0'} overflow-x-auto`}>
     <h1 className="mb-4 text-2xl font-bold">Profile</h1>
 
     {/* User Information Section */}
@@ -140,35 +140,37 @@ const Profile = () => {
     {/* Booking History Section */}
     <section className="p-6 bg-white rounded shadow">
       <h2 className="mb-4 text-xl font-semibold">Booking History</h2>
-      <table className="min-w-full">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="px-4 py-2 text-left">Date</th>
-            <th className="px-4 py-2 text-left">Details</th>
-            <th className="px-4 py-2 text-left">Status</th>
-            <th className="px-4 py-2 text-left">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {bookings.map((booking) => (
-            <tr key={booking.id} className="border-b">
-              <td className="px-4 py-2">{booking.date}</td>
-              <td className="px-4 py-2">{booking.details}</td>
-              <td className="px-4 py-2">{booking.status}</td>
-              <td className="px-4 py-2">
-                {booking.status === 'Upcoming' && (
-                  <button
-                    onClick={() => handleCancelBooking(booking.id)}
-                    className="text-red-500 hover:underline"
-                  >
-                    Cancel
-                  </button>
-                )}
-              </td>
+      <div className="overflow-x-auto"> {/* Added wrapper for horizontal scroll */}
+        <table className="min-w-full">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="px-4 py-2 text-left">Date</th>
+              <th className="px-4 py-2 text-left">Details</th>
+              <th className="px-4 py-2 text-left">Status</th>
+              <th className="px-4 py-2 text-left">Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {bookings.map((booking) => (
+              <tr key={booking.id} className="border-b">
+                <td className="px-4 py-2">{booking.date}</td>
+                <td className="px-4 py-2">{booking.details}</td>
+                <td className="px-4 py-2">{booking.status}</td>
+                <td className="px-4 py-2">
+                  {booking.status === 'Upcoming' && (
+                    <button
+                      onClick={() => handleCancelBooking(booking.id)}
+                      className="text-red-500 hover:underline"
+                    >
+                      Cancel
+                    </button>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
   </main>
 </div>
