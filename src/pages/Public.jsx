@@ -8,15 +8,7 @@ import Navbar from "../components/navbar/Navbar";
 
 
 
-
-
 const Public = () => {
-
-//     const [activeForm, setActiveForm] = useState('');
-
-//   const handleFormDisplay = (formType) => {
-//     setActiveForm(activeForm === formType ? '' : formType);
-//   };
 
 const [activeForm, setActiveForm] = useState('');
 
@@ -182,7 +174,112 @@ const handleReportSubmit = (e) => {
         <SchedulePickups />
 
 <section className="grid grid-cols-1 gap-6 md:grid-cols-3">
-  {/* Waste Pickup */}
+      {/* Waste Pickup Section */}
+      <div className="flex flex-col items-center transition-transform transform hover:scale-105 shadow-lg my-10 rounded-lg p-6 bg-gray-50">
+        <img src="/images/images5.jpeg" alt="Waste Pickup Icon" className="w-[200px] h-[200px] mb-4 transition duration-300 transform hover:scale-110" />
+        <button
+          onClick={() => handleFormDisplay('pickup')}
+          className="px-6 py-3 text-white bg-orange-600 rounded-lg hover:bg-orange-700"
+        >
+          Request Waste Pickup
+        </button>
+        {activeForm === 'pickup' && (
+          <form onSubmit={handlePickupSubmit} className="w-full mt-4 p-4 bg-white rounded shadow-md space-y-4">
+            <label className="block" htmlFor="address">Enter your address:</label>
+            <input
+              type="text"
+              id="address"
+              required
+              value={userLocation}
+              onChange={handleLocationChange}
+              className="w-full p-2 border rounded focus:outline-none focus:border-orange-300"
+            />
+            <label className="block" htmlFor="waste-type">Type of waste:</label>
+            <select id="waste-type" required className="w-full p-2 border rounded focus:outline-none focus:border-orange-300">
+              <option value="recyclables">Recyclables</option>
+              <option value="hazardous">Hazardous Waste</option>
+              <option value="organic">Organic Waste</option>
+            </select>
+            <label className="block text-gray-700">Additional Details</label>
+            <textarea className="w-full p-2 border rounded focus:outline-none focus:border-orange-300" placeholder="Provide any additional information" required></textarea>
+            <button type="submit" className="w-full py-2 text-white bg-orange-500 rounded hover:bg-orange-600">Submit</button>
+            {showPickupResult && <p className="mt-4 p-2 bg-green-100 rounded">{pickupDetails}</p>}
+          </form>
+        )}
+      </div>
+
+      {/* Report Illegal Dumping Section */}
+      <div className="flex flex-col items-center transition-transform transform hover:scale-105 shadow-lg my-10 rounded-lg p-6 bg-gray-50">
+        <img src="/images/illegal.jpeg" alt="Illegal Dumping Icon" className="w-[200px] h-[200px] mb-4 transition duration-300 transform hover:scale-110" />
+        <button
+          onClick={() => handleFormDisplay('dumping')}
+          className="px-6 py-3 text-white bg-red-600 rounded-lg hover:bg-red-700"
+        >
+          Report Illegal Dumping
+        </button>
+        {activeForm === 'dumping' && (
+          <form onSubmit={handleReportSubmit} className="w-full mt-4 p-4 bg-white rounded shadow-md space-y-4">
+            <label className="block" htmlFor="location">Dumping Location:</label>
+            <input type="text" id="location" required className="w-full p-2 border rounded focus:outline-none focus:border-red-300" />
+            <label className="block" htmlFor="description">Description:</label>
+            <textarea id="description" placeholder="Describe the issue..." className="w-full p-2 border rounded focus:outline-none focus:border-red-300" required></textarea>
+            <input type="file" id="dump-image" accept="image/*" required className="w-full p-2 border rounded" />
+            <button type="submit" className="w-full py-2 text-white bg-red-500 rounded hover:bg-red-600">Report</button>
+            {showReportResult && <p className="mt-4 p-4 bg-red-100 rounded">Thank you for reporting. Your submission has been received.</p>}
+          </form>
+        )}
+      </div>
+
+      {/* Find Recycling Center Section */}
+      <div className="flex flex-col items-center transition-transform transform hover:scale-105 shadow-lg my-10 rounded-lg p-6 bg-gray-50">
+        <img src="/images/recycle.jpg" alt="Recycling Center Icon" className="w-[200px] h-[200px] mb-4 transition duration-300 transform hover:scale-110" />
+        <button
+          onClick={() => handleFormDisplay('recycling')}
+          className="px-6 py-3 text-white bg-green-600 rounded-lg hover:bg-green-700"
+        >
+          Find Recycling Center
+        </button>
+        {activeForm === 'recycling' && (
+  <div className="w-full mt-4 p-4 bg-white rounded shadow-md">
+    <button 
+      onClick={handleFindNearMe} 
+      className="w-full py-2 text-white bg-green-500 rounded hover:bg-green-600"
+    >
+      Find Centers Near Me
+    </button>
+    
+    {error && <p className="text-red-500">{error}</p>}
+    
+    <div className="mt-6">
+      {recyclingCenters.length > 0 ? (
+        recyclingCenters.map((center, index) => (
+          <div key={index} className="p-4 bg-white rounded shadow mb-4">
+            <h4 className="font-bold">{center.name}</h4>
+            <p>Address: {center.address}</p>
+            <a 
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(center.name)}`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-blue-500"
+            >
+              View on Map
+            </a>
+          </div>
+        ))
+      ) : (
+        <p>No recycling centers found in your area.</p>
+      )}
+    </div>
+  </div>
+)}
+
+      </div>
+    </section>
+
+
+
+{/* <section className="grid grid-cols-1 gap-6 md:grid-cols-3">
+  pickup
   <div className="flex flex-col items-center transition-transform transform hover:scale-105 shadow-lg my-10 rounded-lg p-6 bg-gray-50">
     <img
       src="/images/images5.jpeg"
@@ -197,7 +294,7 @@ const handleReportSubmit = (e) => {
     </button>
   </div>
 
-  {/* Report Illegal Dumping */}
+ Illegal dumping
   <div className="flex flex-col items-center transition-transform transform hover:scale-105 shadow-lg my-10 rounded-lg p-6 bg-gray-50">
     <img
       src="/images/illegal.jpeg"
@@ -212,7 +309,7 @@ const handleReportSubmit = (e) => {
     </button>
   </div>
 
-  {/* Find Recycling Center */}
+ find recycling centers
   <div className="flex flex-col items-center transition-transform transform hover:scale-105 shadow-lg my-10 rounded-lg p-6 bg-gray-50">
     <img
       src="/images/recycle.jpg"
@@ -226,15 +323,10 @@ const handleReportSubmit = (e) => {
       Find Recycling Center
     </button>
   </div>
-</section>
-
-
-
-
-
+</section> */}
       {/* Forms Display with animation */}
-      <div className="mt-6">
-                    {/* Request Waste Pickup Form */}
+      {/* <div className="mt-6">
+                    Request Waste Pickup Form
                     {activeForm === 'pickup' && (
                 <form onSubmit={handlePickupSubmit} className="p-4 bg-white rounded shadow-md">
                     <label className="block mb-2" htmlFor="address">Enter your address:</label>
@@ -275,7 +367,7 @@ const handleReportSubmit = (e) => {
                         Submit
                     </button>
 
-                    {/* Pickup Details Display */}
+                    Pickup Details Display
                     {showPickupResult && (
                     <div className="mt-4">
                         <p className="p-2 bg-green-100 rounded">{pickupDetails}</p>
@@ -292,7 +384,7 @@ const handleReportSubmit = (e) => {
             )}
             
 
-        {/* Report Illegal Dumping Form */}
+        Report Illegal Dumping Form
         {activeForm === 'dumping' && (
                 <form onSubmit={handleReportSubmit} className="p-4 bg-white rounded shadow-md">
                     <label className="block mb-2" htmlFor="location">Dumping Location:</label>
@@ -328,7 +420,7 @@ const handleReportSubmit = (e) => {
                         Report
                     </button>
 
-                    {/* Report Submission Confirmation */}
+                    
                     {showReportResult && (
                         <div id="report-result" className="p-4 mt-4 bg-red-100 rounded shadow-md">
                             <p>Thank you for reporting. Your submission has been received.</p>
@@ -337,7 +429,7 @@ const handleReportSubmit = (e) => {
                 </form>
             )}
 
-        {/* Find Recycling Center Section */}
+        Find Recycling Center Section
       {activeForm === 'recycling' && (
         <div>
           <button onClick={handleFindNearMe} className="px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600">
@@ -365,7 +457,7 @@ const handleReportSubmit = (e) => {
         </div>
       )}
 
-      </div>
+      </div> */}
 
 
         {/* Map and Location Section */}
