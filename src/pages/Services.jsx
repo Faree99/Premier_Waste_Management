@@ -9,7 +9,7 @@ const Services = () => {
         <Navbar />
       <div className="bg-gray-100">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-green-400 via-yellow-300 to-orange-500 text-white py-20">
+        <section className="bg-gradient-to-r from-green-600 via-green-400 to-green-600 text-white py-20">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-4">Premier Waste Management Services</h1>
             <p className="text-lg mb-6">Choose the best services tailored for you.</p>

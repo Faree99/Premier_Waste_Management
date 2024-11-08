@@ -55,12 +55,20 @@ const Header = () => {
             </nav>
 
             {/* CTA Buttons */}
+            <div>
             <button
                 onClick={toggleModal}
                 className="px-4 py-2 ml-4 text-white transition border-2 border-white rounded-full hover:bg-white hover:text-green-800"
             >
                 Sign Up
             </button>
+            <button
+                onClick={toggleModal}
+                className="px-4 py-2 ml-4 text-green-900 bg-white transition border-2 border-green-600 rounded-full hover:bg-green-500 hover:text-white"
+            >
+                Log In
+            </button>
+            </div>
             
             {/* Render the Modal when `isModalOpen` is true */}
             {isModalOpen && <Register closeModal={toggleModal} />}
@@ -99,6 +107,12 @@ const Header = () => {
                             className="block w-full px-4 py-2 mt-2 text-center text-green-500 border border-green-500 rounded hover:bg-green-800 hover:text-white"
                         >
                             Sign Up
+                        </button>
+                        <button
+                            onClick={toggleModal}
+                            className="block w-full px-4 py-2 mt-2 text-center text-green-500 border border-green-500 rounded hover:bg-green-800 hover:text-white"
+                        >
+                           Login
                         </button>
                     </div>
                 )}

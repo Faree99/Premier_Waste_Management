@@ -10,6 +10,7 @@ import Testimonials from "../components/private/Testimonials";
 import Login from '../components/modal/Login';
 import Dashboard from '../components/private/Dashboard';
 import LocateCompany from '../components/private/LocateCompany';
+import Register from '../components/modal/Register';
 
 
 
@@ -21,6 +22,7 @@ const Private = () => {
     
     setIsAuthenticated(true); 
   };
+
   
   return (
    <>
@@ -37,6 +39,7 @@ const Private = () => {
                         <HowItWorks />
                         <Services />
                         <Testimonials />
+                       
                     </>
                 ) : (
                     <Navigate to="/dashboard" />
