@@ -4,22 +4,22 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Jane Doe',
+      name: 'Janet Ademola',
       photo: '/images/jane.jpg',
       rating: 5,
       review: 'Amazing service! Highly recommend to everyone.',
     },
     {
       id: 2,
-      name: 'John Smith',
-      photo: '/images/john.jpg',
+      name: 'Mary Oladayo',
+      photo: '/images/alice.jpg',
       rating: 4,
       review: 'Great experience, very satisfied with the results.',
     },
     {
       id: 3,
-      name: 'Alice Johnson',
-      photo: '/images/alice.jpg',
+      name: 'Oloruntobi Adeyemi',
+      photo: '/images/john.jpg',
       rating: 5,
       review: 'Truly outstanding service and attention to detail!',
     },

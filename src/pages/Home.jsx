@@ -52,11 +52,11 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-4 rounded-lg shadow-lg">
               <p className="text-gray-700 italic">"The waste management solutions provided by this platform are exceptional! Scheduling pickups is so easy!"</p>
-              <p className="font-semibold mt-2">- Jane D.</p>
+              <p className="font-semibold mt-2">- Janet A.</p>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-lg">
               <p className="text-gray-700 italic">"Thanks to their diverse dumpster sizes, we can manage our waste effectively and sustainably."</p>
-              <p className="font-semibold mt-2">- John S.</p>
+              <p className="font-semibold mt-2">- Oloruntobi A.</p>
             </div>
           </div>
         </div>
