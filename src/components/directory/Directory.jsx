@@ -31,12 +31,12 @@ const Directory = () => {
                 <div className="flex flex-col items-center space-y-6 md:flex-row md:space-y-0 md:space-x-6">
                
             {selectedTab === 'public' && (
-                <div className="p-6 text-center bg-white rounded-lg shadow-md md:w-1/2">
+                <div className="p-6 text-center bg-white rounded-lg shadow-md md:w-1/2 relative z-10">
                     <h3 className="mb-4 text-2xl font-bold text-green-600">Public Trash Cans</h3>
                     <p className="mb-4">Locate public trash cans near you or check pickup schedules with our map.</p>
                     {/* Interactive Map */}
                     <div className="flex items-center justify-center h-48 bg-gray-200 rounded-lg">
-                        <MapComponent /> {/* Replace static map with the MapComponent */}
+                        <MapComponent /> 
                     </div>
                 </div>
             )}

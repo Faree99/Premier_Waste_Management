@@ -18,7 +18,7 @@ const Navbar = () => {
         <header
             data-aos="fade"
             data-aos-duration="300"
-            className="relative z-20 border-b-[1px] border-primary/50 bg-gradient-to-l from-green-700 via-green-500 to-green-700 text-white shadow-lg"
+            className="sticky top-0 z-50 border-b-[1px] border-primary/50 bg-gradient-to-l from-green-700 via-green-500 to-green-700 text-white shadow-lg"
         >
             <nav className="flex items-center justify-between p-4">
                 <div className="text-2xl text-white md:text-3xl">
@@ -91,3 +91,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

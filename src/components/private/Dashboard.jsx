@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { auth } from "../../firebase"; // Ensure this is the correct import for your firebase setup
+import { Link, useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to manage sidebar visibility
+  const [user, setUser] = useState(null); // State to store the logged-in user
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen); // Toggle sidebar visibility
@@ -11,6 +14,28 @@ const Dashboard = () => {
   const closeSidebar = () => {
     setIsSidebarOpen(false); // Close sidebar
   };
+
+  // // Log out function
+  const handleLogout = () => {
+    auth.signOut(); // Sign out from Firebase
+    navigate("/private-sector"); // Redirect to login page
+  };
+
+  // const username = user?.displayName || user?.email.split('@')[0] || "User";
+  useEffect(() => {
+    // Check if user is logged in on component mount
+    const currentUser = auth.currentUser;
+
+    if (currentUser) {
+      setUser(currentUser); // Set the logged-in user
+    } else {
+      // If no user is logged in, navigate to the login page
+      navigate('/private-sector');
+    }
+  }, [navigate]);
+
+  if (!user) return <div>Loading...</div>;
+  
 
   return (
     <div className="flex h-screen bg-gradient-to-b from-green-200 to-orange-200">
@@ -38,18 +63,20 @@ const Dashboard = () => {
     </div>
 
     <nav className="flex flex-col p-4">
-      <Link to="/dashboard" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Home</Link>
-      <Link to="/my-services" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>My Services</Link>
-      <Link to="/payment-history" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Payment History</Link>
-      <Link to="/profile" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Profile</Link>
-      <Link to="/private-sector" className="py-2 text-red-600 hover:text-red-800" onClick={closeSidebar}>Logout</Link>
+    <Link to="/dashboard" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Home</Link>
+          {/* <Link to="/my-services" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>My Services</Link> */}
+          <Link to="/payment-history" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Payment History</Link>
+          <Link to="/profile" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Profile</Link>
+          <button onClick={handleLogout} className="py-2 text-red-600 hover:text-red-800 mr-auto">Logout</button>
     </nav>
   </aside>
 
   {/* Main Content Area */}
   <main className={`flex-1 p-4 md:p-8 transition-all duration-300 ${isSidebarOpen ? 'ml-64' : ''}`}>
     {/* Welcome Message */}
-    <h1 className="mb-6 text-2xl font-bold">Welcome, User!</h1>
+    <h1 className="mb-6 text-2xl font-bold">
+          <h1>Welcome, {user.displayName ? user.displayName : 'User'}!</h1>
+        </h1>
 
     {/* Quick Actions */}
     <section className="mb-8">

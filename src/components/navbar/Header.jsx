@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Register from '../modal/Register';
+import Register from '../modal/Register'; // Assuming Register is the Sign-Up Modal
+import LoginModal from '../modal/Login'; // Assuming LoginModal is the Login Modal
 import './Navbar.css';
 
 const Header = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
-    const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
 
-    // Function to open/close the modal
-    const toggleModal = () => setIsModalOpen(!isModalOpen);
+    // Function to toggle modals
+    const toggleSignUpModal = () => setIsSignUpModalOpen(!isSignUpModalOpen);
+    const toggleLoginModal = () => setIsLoginModalOpen(!isLoginModalOpen);
+
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
     const toggleMobileDropdown = () => setIsMobileDropdownOpen(!isMobileDropdownOpen);
-    const toggleSignUpModal = () => setIsSignUpModalOpen(!isSignUpModalOpen);
 
     return (
         <header
             data-aos="fade"
             data-aos-duration="300"
-            className="relative flex items-center justify-between p-4 border-b-[1px] border-primary/50 bg-gradient-to-l from-green-700 via-green-500 to-green-700 text-white shadow-lg"
+            className="sticky top-0 z-50 flex items-center justify-between p-4 border-b-[1px] border-primary/50 bg-gradient-to-l from-green-700 via-green-500 to-green-700 text-white shadow-lg"
         >
             {/* Logo */}
             <div className="text-2xl text-white md:text-3xl">
@@ -56,22 +58,28 @@ const Header = () => {
 
             {/* CTA Buttons */}
             <div>
-            <button
-                onClick={toggleModal}
-                className="px-4 py-2 ml-4 text-white transition border-2 border-white rounded-full hover:bg-white hover:text-green-800"
-            >
-                Sign Up
-            </button>
-            <button
-                onClick={toggleModal}
-                className="px-4 py-2 ml-4 text-green-900 bg-white transition border-2 border-green-600 rounded-full hover:bg-green-500 hover:text-white"
-            >
-                Log In
-            </button>
+                {/* Sign Up Button */}
+                <button
+                    onClick={toggleSignUpModal}
+                    className="px-4 py-2 ml-4 text-white transition border-2 border-white rounded-full hover:bg-white hover:text-green-800"
+                >
+                    Sign Up
+                </button>
+                
+                {/* Log In Button */}
+                <button
+                    onClick={toggleLoginModal}
+                    className="px-4 py-2 ml-4 text-green-900 bg-white transition border-2 border-green-600 rounded-full hover:bg-green-500 hover:text-white"
+                >
+                    Log In
+                </button>
             </div>
             
-            {/* Render the Modal when `isModalOpen` is true */}
-            {isModalOpen && <Register closeModal={toggleModal} />}
+            {/* Render the Sign Up Modal when `isSignUpModalOpen` is true */}
+            {isSignUpModalOpen && <Register closeModal={toggleSignUpModal} />}
+
+            {/* Render the Login Modal when `isLoginModalOpen` is true */}
+            {isLoginModalOpen && <LoginModal closeModal={toggleLoginModal} />}
 
             {/* Mobile Menu Icon */}
             <div className="md:hidden">
@@ -103,13 +111,13 @@ const Header = () => {
                         <Link to="/news" className="block px-4 py-2 text-gray-800 hover:bg-green-200">News</Link>
                         <Link to="/contactus" className="block px-4 py-2 text-gray-800 hover:bg-green-200">Contact Us</Link>
                         <button
-                            onClick={toggleModal}
+                            onClick={toggleSignUpModal}
                             className="block w-full px-4 py-2 mt-2 text-center text-green-500 border border-green-500 rounded hover:bg-green-800 hover:text-white"
                         >
                             Sign Up
                         </button>
                         <button
-                            onClick={toggleModal}
+                            onClick={toggleLoginModal}
                             className="block w-full px-4 py-2 mt-2 text-center text-green-500 border border-green-500 rounded hover:bg-green-800 hover:text-white"
                         >
                            Login
@@ -117,14 +125,12 @@ const Header = () => {
                     </div>
                 )}
             </div>
-
-            {/* Sign Up Modal */}
-            {isSignUpModalOpen && <SignUpModal closeModal={toggleSignUpModal} />}
         </header>
     );
 };
 
 export default Header;
+
 
 
 

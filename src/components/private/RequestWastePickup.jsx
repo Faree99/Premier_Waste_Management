@@ -20,9 +20,9 @@ const RequestWastePickup = () => {
 
     // Pricing for different waste types
     const pricing = {
-        recyclables: 50,
-        hazardous: 150,
-        organic: 100,
+        recyclables: 500,
+        hazardous: 1500,
+        organic: 1000,
     };
 
     useEffect(() => {
@@ -52,7 +52,7 @@ const RequestWastePickup = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsPaymentSuccessful(true);
-        setPaymentDetails(`Pickup scheduled at: ${address}, Type: ${pickupWasteType}, Total: $${price}`);
+        setPaymentDetails(`Pickup scheduled at: ${address}, Type: ${pickupWasteType}, Total: ₦${price}`);
         setConfirmationMessage('Your pickup request has been submitted successfully!');
         sendEmailNotification();
     };
@@ -100,7 +100,7 @@ const RequestWastePickup = () => {
 
         <nav className="flex flex-col p-4">
             <Link to="/dashboard" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Home</Link>
-            <Link to="/my-services" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>My Services</Link>
+            {/* <Link to="/my-services" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>My Services</Link> */}
             <Link to="/payment-history" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Payment History</Link>
             <Link to="/profile" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Profile</Link>
             <Link to="/private-sector" className="py-2 text-red-600 hover:text-red-800" onClick={closeSidebar}>Logout</Link>
@@ -139,7 +139,7 @@ const RequestWastePickup = () => {
                             <option value="hazardous">Hazardous Waste</option>
                             <option value="organic">Organic Waste</option>
                         </select>
-                        <p className="font-bold text-gray-500 text-m ">Price: <span id="price">${price}</span></p>
+                        <p className="font-bold text-gray-500 text-m ">Price: <span id="price">₦{price}</span></p>
                     </div>
 
                     {/* Service Type Selection */}
@@ -260,7 +260,7 @@ const RequestWastePickup = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                        className="w-full p-2 text-white bg-green-500 rounded hover:bg-green-600"
                     >
                         Submit Request
                     </button>

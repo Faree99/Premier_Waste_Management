@@ -461,7 +461,7 @@ const handleReportSubmit = (e) => {
 
 
         {/* Map and Location Section */}
-        <section className="p-6 text-center bg-white rounded-lg shadow-md">
+        <section className="p-6 text-center bg-white rounded-lg shadow-md relative z-10">
           <h3 className="text-2xl font-bold text-green-600">Find Nearest Public Trash Can</h3>
           <p className="mt-2 text-gray-600">Use our interactive map to locate the nearest government trash cans for convenient disposal.</p>
           <div className="mt-4 h-72">
