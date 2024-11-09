@@ -1,19 +1,19 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-// Firebase configuration object
+// Firebase configuration object using environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyC1nCyFyntrb3Lz24SrldBJU5eSprTvIKo",
-  authDomain: "waste-management-418b3.firebaseapp.com",
-  projectId: "waste-management-418b3",
-  storageBucket: "waste-management-418b3.firebasestorage.app",
-  messagingSenderId: "331182836679",
-  appId: "1:331182836679:web:b3ba137ef0890bafca67e2",
-  measurementId: "G-D9PC7C19L1"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig); // Ensure app is initialized first
