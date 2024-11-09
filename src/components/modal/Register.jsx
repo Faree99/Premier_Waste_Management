@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase'; // Make sure you are importing your Firebase auth object
+import { auth } from "../../../firebase"; // Make sure you are importing your Firebase auth object
 import { updateProfile } from 'firebase/auth'; // Import updateProfile correctly
 import Login from './Login';
 

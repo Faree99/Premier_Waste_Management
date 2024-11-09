@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase"; // Make sure to import the auth object from your firebase setup
+import { auth } from "../../../firebase"; // Make sure to import the auth object from your firebase setup
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ closeModal }) => {

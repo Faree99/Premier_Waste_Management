@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { auth } from "../../firebase"; // Ensure this is the correct import for your firebase setup
+import { auth } from "../../../firebase"; // Ensure this is the correct import for your firebase setup
 import { Link, useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
