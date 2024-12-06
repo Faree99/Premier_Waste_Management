@@ -123,7 +123,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="mt-8 text-sm text-center text-gray-500">
-        &copy; {new Date().getFullYear()} Premier Waste Management Services. All rights reserved.
+        &copy; {new Date().getFullYear()} EcoTrade Services. All rights reserved.
       </div>
     </footer>
   )

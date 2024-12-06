@@ -18,25 +18,26 @@ const Navbar = () => {
         <header
             data-aos="fade"
             data-aos-duration="300"
-            className="sticky top-0 z-50 border-b-[1px] border-primary/50 bg-gradient-to-l from-green-700 via-green-500 to-green-700 text-white shadow-lg"
+            className="sticky top-0 z-50 text-white shadow-lg"
+            style={{backgroundColor: '#388E3C'}}
         >
             <nav className="flex items-center justify-between p-4">
                 <div className="text-2xl text-white md:text-3xl">
                     <Link to="/" className="">
-                        P
+                        Eco
                         <span className="inline-block font-bold text-primary dark:text-black">
-                            WM
+                            Trade
                         </span>
                     </Link>
                 </div>
 
                 {/* Desktop Navigation */}
                 <div className="hidden space-x-6 md:flex">
-                    <Link to="/" className="text-white hover:underline">Home</Link>
-                    <Link to="/aboutus" className="text-white hover:underline">About Us</Link>
+                    <Link to="/" className="font-semibold hover:underline" style={{color:'#F1F1F1'}}>Home</Link>
+                    <Link to="/aboutus" className="font-semibold hover:underline" style={{color:'#F1F1F1'}}>About Us</Link>
                     
                     <div className="relative dropdown">
-                        <button className="text-white hover:underline">
+                        <button className="font-semibold hover:underline" style={{color:'#F1F1F1'}}>
                            Services
                         </button>
                         <div className="absolute dropdown-content">
@@ -45,12 +46,12 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <Link to="/news" className="text-white hover:underline">News</Link>
-                    <Link to="/contactus" className="text-white hover:underline">Contact Us</Link>
+                    <Link to="/news" className="font-semibold hover:underline" style={{color:'#F1F1F1'}}>News</Link>
+                    <Link to="/contactus" className="font-semibold hover:underline" style={{color:'#F1F1F1'}}>Contact Us</Link>
                 </div>
 
                 {/* Button and Mobile Menu Toggle */}
-                <Link to="/guidelines"  className="hidden px-4 py-2 text-white bg-orange-500 rounded md:block hover:bg-orange-700">
+                <Link to="/guidelines"  className="hidden px-4 py-2 font-semibold text-white rounded md:block hover:bg-orange-400" style={{backgroundColor:'#FFA500'}}>
                     Disposal Guidelines
                 </Link>
                 

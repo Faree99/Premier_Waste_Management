@@ -208,7 +208,7 @@ const LocateCompany = () => {
   };
   
     return (
-        <div className="flex bg-gradient-to-b from-green-200 to-orange-200">
+        <div className="flex bg-gray-100">
         {/* Toggle Button for Mobile View */}
         <button
           onClick={toggleSidebar}
@@ -219,9 +219,9 @@ const LocateCompany = () => {
           </svg>
         </button>
   
-        {/* Sidebar */}
-        <aside className={`fixed inset-y-0 left-0 z-50 w-64 p-4 bg-green-700 shadow-md transform transition-transform duration-300 
-          ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:relative md:shadow-none`}>
+       {/* Sidebar */}
+       <aside className={`fixed inset-y-0 left-0 z-50 w-64 p-4 bg-green-700 shadow-md transform transition-transform duration-300 
+                   ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:relative md:shadow-none`}    >
           <div className="flex items-center justify-between">
             <div className="p-4 text-2xl font-bold text-white">Dashboard</div>
             {/* Close Button Only Visible in Mobile View */}
@@ -233,14 +233,16 @@ const LocateCompany = () => {
           </div>
   
           <nav className="flex flex-col p-4">
-              <Link to="/dashboard" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Home</Link>
-              {/* <Link to="/my-services" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>My Services</Link> */}
-              <Link to="/payment-history" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Payment History</Link>
-              <Link to="/profile" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Profile</Link>
-              <Link to="/private-sector" className="py-2 text-red-600 hover:text-red-800" onClick={closeSidebar}>Logout</Link>
-            </nav>
+            <Link to="/dashboard" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Home</Link>
+            <Link to="/requestpickup" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Request Pickup</Link>
+            <Link to="/locatecompany" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Locate Company</Link>
+            {/* <Link to="/my-services" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>My Services</Link> */}
+            <Link to="/payment-history" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Payment History</Link>
+            <Link to="/profile" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Profile</Link>
+            <Link to="/manage-account" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Manage Account</Link>
+            <Link to="/private-sector" className="py-2 text-red-600 hover:text-red-800 " onClick={closeSidebar}>Logout</Link>
+          </nav>
         </aside>
-
             {/* Main Content Area */}
             <main className="flex-1 p-6">
                 <h1 className="mb-4 text-2xl font-bold">Locate Waste Management Companies</h1>

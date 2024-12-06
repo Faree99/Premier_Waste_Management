@@ -12,7 +12,7 @@ const ManageAccount = () => {
     setIsSidebarOpen(false); // Close sidebar
   };
     return (
-        <div className="flex bg-gradient-to-b from-green-200 to-orange-200">
+        <div className="flex bg-gray-100">
         {/* Toggle Button for Mobile View */}
         <button
           onClick={toggleSidebar}
@@ -38,9 +38,12 @@ const ManageAccount = () => {
   
           <nav className="flex flex-col p-4">
             <Link to="/dashboard" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Home</Link>
+            <Link to="/requestpickup" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Request Pickup</Link>
+            <Link to="/locatecompany" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Locate Company</Link>
             {/* <Link to="/my-services" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>My Services</Link> */}
             <Link to="/payment-history" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Payment History</Link>
             <Link to="/profile" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Profile</Link>
+            <Link to="/manage-account" className="py-2 text-white hover:bg-green-300" onClick={closeSidebar}>Manage Account</Link>
             <Link to="/private-sector" className="py-2 text-red-600 hover:text-red-800 " onClick={closeSidebar}>Logout</Link>
           </nav>
         </aside>

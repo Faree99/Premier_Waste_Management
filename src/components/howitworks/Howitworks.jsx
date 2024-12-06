@@ -11,8 +11,8 @@ const Howitworks = () => {
                 <div className="grid gap-8 md:grid-cols-2">
                     {/* Public Option */}
                    
-                    <div className="p-8 bg-green-50 rounded-lg shadow-lg">
-            <h3 className="mb-4 text-2xl font-bold text-green-600 text-center">Public Waste Management Services</h3>
+                    <div className="p-8 rounded-lg shadow-lg bg-green-50">
+            <h3 className="mb-4 text-2xl font-bold text-center text-green-600">Public Waste Management Services</h3>
             <ul className="space-y-4 text-lg">
                 <li className="flex items-center space-x-3">
                 <span className="font-semibold text-green-500">1.</span>
@@ -35,7 +35,7 @@ const Howitworks = () => {
                         <h3 className="mb-4 text-2xl font-bold text-orange-600">Private Waste Management</h3>
                         <ul className="space-y-4 text-lg">
                             <li className="flex items-center space-x-3">
-                                <span className="font-semibold text-orange-500">1.</span>
+                                <span className="font-semibold text-[#FFA500]">1.</span>
                                 <p>Find a Recycling Center</p>
                             </li>
                             <li className="flex items-center space-x-3">
@@ -48,19 +48,19 @@ const Howitworks = () => {
                             </li>
                         </ul>
                     </div> */}
-                    <div className="p-8 bg-orange-50 rounded-lg shadow-lg">
-  <h3 className="mb-4 text-2xl font-bold text-orange-600 text-center">Private Waste Management Services</h3>
+                    <div className="p-8 rounded-lg shadow-lg bg-orange-50">
+  <h3 className="mb-4 text-2xl font-bold text-center text-[#FFA500]">Private Waste Management Services</h3>
   <ul className="space-y-4 text-lg">
     <li className="flex items-center space-x-3">
-      <span className="font-semibold text-orange-500">1.</span>
+      <span className="font-semibold text-[#FFA500]">1.</span>
       <p><span className='font-bold'>Find a Recycling Center:</span> Locate nearby recycling centers to dispose of your waste responsibly.</p>
     </li>
     <li className="flex items-center space-x-3">
-      <span className="font-semibold text-orange-500">2.</span>
+      <span className="font-semibold text-[#FFA500]">2.</span>
       <p><span className='font-bold'>Choose a Service Provider:</span> Select from a variety of reliable service providers tailored to your needs.</p>
     </li>
     <li className="flex items-center space-x-3">
-      <span className="font-semibold text-orange-500">3.</span>
+      <span className="font-semibold text-[#FFA500]">3.</span>
       <p><span className='font-bold'>Arrange Pickup or Drop-Off:</span> Schedule convenient pickup or drop-off services for your waste.</p>
     </li>
   </ul>

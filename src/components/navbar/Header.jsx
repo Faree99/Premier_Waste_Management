@@ -21,14 +21,14 @@ const Header = () => {
         <header
             data-aos="fade"
             data-aos-duration="300"
-            className="sticky top-0 z-50 flex items-center justify-between p-4 border-b-[1px] border-primary/50 bg-gradient-to-l from-green-700 via-green-500 to-green-700 text-white shadow-lg"
+            className="sticky top-0 z-50 flex items-center justify-between p-4  bg-[#388E3C]  text-white shadow-lg"
         >
             {/* Logo */}
             <div className="text-2xl text-white md:text-3xl">
                 <Link to="/" className="">
-                    P
+                    Eco
                     <span className="inline-block font-bold text-primary dark:text-black">
-                        WM
+                        Trade
                     </span>
                 </Link>
             </div>
@@ -36,11 +36,11 @@ const Header = () => {
             {/* Navigation Links */}
             <nav className="hidden space-x-6 md:flex">
                 <div className="hidden space-x-6 md:flex">
-                    <Link to="/" className="text-white hover:underline">Home</Link>
-                    <Link to="/aboutus" className="text-white hover:underline">About Us</Link>
+                    <Link to="/" className="font-semibold text-white hover:underline">Home</Link>
+                    <Link to="/aboutus" className="font-semibold text-white hover:underline">About Us</Link>
                     
                     <div className="relative z-20 dropdown">
-                        <button className="text-white hover:underline" onClick={toggleDropdown}>
+                        <button className="font-semibold text-white hover:underline" onClick={toggleDropdown}>
                             Services
                         </button>
                         {isDropdownOpen && (
@@ -51,8 +51,8 @@ const Header = () => {
                         )}
                     </div>
 
-                    <Link to="/news" className="text-white hover:underline">News</Link>
-                    <Link to="/contactus" className="text-white hover:underline">Contact Us</Link>
+                    <Link to="/news" className="font-semibold text-white hover:underline">News</Link>
+                    <Link to="/contactus" className="font-semibold text-white hover:underline">Contact Us</Link>
                 </div>
             </nav>
 
@@ -69,7 +69,7 @@ const Header = () => {
                 {/* Log In Button */}
                 <button
                     onClick={toggleLoginModal}
-                    className="px-4 py-2 ml-4 text-green-900 bg-white transition border-2 border-green-600 rounded-full hover:bg-green-500 hover:text-white"
+                    className="px-4 py-2 ml-4 text-green-900 transition bg-white border-2 border-green-600 rounded-full hover:bg-green-500 hover:text-white"
                 >
                     Log In
                 </button>

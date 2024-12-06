@@ -5,7 +5,7 @@ const Directory = () => {
     const [selectedTab, setSelectedTab] = useState('public');
 
   return (
-    <section className="py-16 text-gray-800 bg-gradient-to-b from-green-100 via-green-300 to-green-500">
+    <section className="py-16 text-gray-800 bg-gray-100">
             <div className="max-w-6xl px-6 mx-auto">
                 <h2 className="mb-8 text-3xl font-semibold text-center md:text-4xl">
                     Find What You Need
@@ -21,7 +21,7 @@ const Directory = () => {
                     </button>
                     <button
                         onClick={() => setSelectedTab('private')}
-                        className={`px-4 py-2 font-semibold border-b-2 ml-4 ${selectedTab === 'private' ? 'border-orange-500 text-orange-600' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
+                        className={`px-4 py-2 font-semibold border-b-2 ml-4 ${selectedTab === 'private' ? 'border-[#FFA500] text-[#FFA500]' : 'border-transparent text-gray-500 hover:text-gray-700'}`}
                     >
                         Private Services
                     </button>
@@ -31,7 +31,7 @@ const Directory = () => {
                 <div className="flex flex-col items-center space-y-6 md:flex-row md:space-y-0 md:space-x-6">
                
             {selectedTab === 'public' && (
-                <div className="p-6 text-center bg-white rounded-lg shadow-md md:w-1/2 relative z-10">
+                <div className="relative z-10 p-6 text-center bg-white rounded-lg shadow-md md:w-1/2">
                     <h3 className="mb-4 text-2xl font-bold text-green-600">Public Trash Cans</h3>
                     <p className="mb-4">Locate public trash cans near you or check pickup schedules with our map.</p>
                     {/* Interactive Map */}
@@ -43,7 +43,7 @@ const Directory = () => {
 
             {selectedTab === 'private' && (
                 <div className="p-6 text-center bg-white rounded-lg shadow-md md:w-1/2">
-                    <h3 className="mb-4 text-2xl font-bold text-orange-600">Recycling Centers</h3>
+                    <h3 className="mb-4 text-2xl font-bold text-[#FFA500]">Recycling Centers</h3>
                     <p className="mb-4">Find nearby recycling centers or private waste management options in your area.</p>
                     {/* Static Map/Image for private tab, or you could use another MapComponent if needed */}
                     <div className="flex items-center justify-center h-48 bg-gray-200 rounded-lg">

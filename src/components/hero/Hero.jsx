@@ -1,4 +1,5 @@
-import React from 'react';
+// import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 
@@ -36,6 +37,8 @@ const Hero = () => {
       description: "Discover innovative ways to manage your waste effectively.",
     },
   ];
+
+  const [hover, setHover] = useState(false);
   
   return (
     <section className="relative h-[85vh] overflow-hidden bg-center bg-cover">    
@@ -68,10 +71,15 @@ const Hero = () => {
               <h1 className="mb-4 text-4xl font-bold md:text-6xl">{slide.title}</h1>
               <p className="mb-6 text-lg md:text-xl">{slide.description}</p>
               <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 animate-slide-in">
-            <Link to="/public-sector" className="px-6 py-3 text-white bg-green-600 rounded shadow-lg hover:bg-green-700">
+            <Link to="/public-sector" className="px-6 py-3 text-white rounded shadow-lg"  style={{
+        backgroundColor: hover ? '#66BB6A' : '#4CAF50', // Toggle colors based on hover state
+        transition: 'background-color 0.3s ease', // Smooth transition
+      }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}>
               Explore Public Services
             </Link>
-            <Link to="/private-sector" className="px-6 py-3 text-white bg-orange-500 rounded shadow-lg hover:bg-orange-700">
+            <Link to="/private-sector" className="px-6 py-3 text-white bg-[#FFA500] rounded shadow-lg hover:bg-orange-400">
               Find Private Solutions
             </Link>
           </div>
