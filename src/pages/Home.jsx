@@ -17,7 +17,7 @@ const Home = () => {
     <>
     <Navbar />
       <Hero />
-    <section className="py-10 bg-white">
+    <section className="py-20 bg-white">
   <div className="grid max-w-5xl grid-cols-1 gap-6 px-4 mx-auto md:grid-cols-3">
     <FeatureItem
       icon="🚛"
