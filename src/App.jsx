@@ -19,6 +19,7 @@ import WasteDisposalGuidelines from './components/about/WasteDisposalGuidelines'
 import ContactUs from './pages/ContactUs';
 import News from './pages/News';
 import Services from './pages/Services';
+import SellWasteForm from './components/private/SellWasteForm';
 
 
 
@@ -50,6 +51,9 @@ function App() {
                 <Route path="/payment-history" element={<PaymentHistory />} />
                 <Route path="/my-services" element={<MyServices />} />
                 <Route path="/manage-account" element={<ManageAccount />} />
+                <Route path="/sellwaste" element={<SellWasteForm />} />
+
+
 
 
 

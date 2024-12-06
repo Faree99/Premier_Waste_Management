@@ -88,6 +88,9 @@ const Dashboard = () => {
         <Link to="/requestpickup" className="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700">
           Request Waste Pickup
         </Link>
+        <Link to="/sellwaste" className="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700">
+          Sell Your Waste
+        </Link>
         <Link to="/locatecompany" className="px-4 py-2 text-white bg-[#FFA500] rounded hover:bg-orange-400">
           Locate Company
         </Link>

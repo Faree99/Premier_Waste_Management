@@ -26,6 +26,7 @@ const Register = ({ closeModal, onLogin }) => {
       });
 
       console.log("User registered:", user);
+      navigate('/dashboard');
       closeModal();
     } catch (error) {
       // Handle errors (e.g., invalid email/password, etc.)
@@ -73,7 +74,7 @@ const Register = ({ closeModal, onLogin }) => {
     
                    {/* Display error message if any */}
                    {errorMessage && (
-                     <div className="text-red-500 text-sm">{errorMessage}</div>
+                     <div className="text-sm text-red-500">{errorMessage}</div>
                    )}
     
                    {/* Submit Button */}
