@@ -18,7 +18,7 @@ const Navbar = () => {
         <header
             data-aos="fade"
             data-aos-duration="300"
-            className="sticky top-0 z-50 text-white shadow-lg"
+            className="sticky top-0 z-50 text-white shadow-lg "
             style={{backgroundColor: '#388E3C'}}
         >
             <nav className="flex items-center justify-between p-4">
