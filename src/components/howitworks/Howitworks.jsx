@@ -26,28 +26,17 @@ const Howitworks = () => {
                 <span className="font-semibold text-green-500">3.</span>
                 <p><span className='font-bold'>Track Progress:</span> Monitor the status of your waste collection for peace of mind.</p>
                 </li>
+                <li className="flex items-center space-x-3">
+      <span className="font-semibold text-green-500">4.</span>
+      <p>
+        <span className="font-bold">Report Overflowing Trash Cans:</span> Quickly notify authorities about full or overflowing trash cans to maintain cleanliness.
+      </p>
+    </li>
             </ul>
             </div>
 
 
                     {/* Private Option */}
-                    {/* <div className="p-8 bg-gray-100 rounded-lg shadow-lg">
-                        <h3 className="mb-4 text-2xl font-bold text-orange-600">Private Waste Management</h3>
-                        <ul className="space-y-4 text-lg">
-                            <li className="flex items-center space-x-3">
-                                <span className="font-semibold text-[#FFA500]">1.</span>
-                                <p>Find a Recycling Center</p>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                <span className="font-semibold text-orange-500">2.</span>
-                                <p>Choose a Service Provider</p>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                <span className="font-semibold text-orange-500">3.</span>
-                                <p>Arrange Pickup or Drop-Off</p>
-                            </li>
-                        </ul>
-                    </div> */}
                     <div className="p-8 rounded-lg shadow-lg bg-orange-50">
   <h3 className="mb-4 text-2xl font-bold text-center text-[#FFA500]">Private Waste Management Services</h3>
   <ul className="space-y-4 text-lg">
@@ -63,6 +52,10 @@ const Howitworks = () => {
       <span className="font-semibold text-[#FFA500]">3.</span>
       <p><span className='font-bold'>Arrange Pickup or Drop-Off:</span> Schedule convenient pickup or drop-off services for your waste.</p>
     </li>
+    <li className="flex items-center space-x-3">
+    <span className="font-semibold text-[#FFA500]">4.</span>
+    <p><span className='font-bold'>Sell Your Waste:</span> Exchange recyclable materials such as plastic, paper, or metal for cash or other rewards by connecting with recycling programs or private buyers.</p>
+  </li>
   </ul>
 </div>
 
