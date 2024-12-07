@@ -13,7 +13,7 @@ const AboutUs = () => {
       <section className="mb-8">
         <h2 className="mb-4 text-2xl font-semibold">Our Mission</h2>
         <p className="text-gray-700">
-          At EcoTrade Waste Management, our mission is to promote sustainable waste management practices across Nigeria. We are dedicated to providing innovative solutions that help individuals and businesses dispose of their waste responsibly while protecting the environment.
+          At EcoTrade Waste Management, our mission is to promote seamless waste management practices across Nigeria. We are dedicated to providing innovative solutions that help individuals, businesses and communities to dispose and trade of their waste responsibly while protecting the environment.
         </p>
       </section>
 
